@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+			function ampliar(objetoMismo){
+				var sinzo=objetoMismo.id;
+				document.getElementById("ampliado").style.visibility="visible";
+				document.getElementById("ampliado").innerHTML="<img src='images/"+sinzo+".jpg'/>";
+			}
+			
+			function og(){
+				document.getElementById("ampliado").style.visibility="hidden";
+			}
+		</script>
+		<style>
+			img{width: 35%;}
+		</style>
+	</head>
+	<body>
+		<center>
+			<img src="images/31.jpg" alt="img31" id="31" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<img src="images/32.jpg" alt="img32" id="32" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<img src="images/33.jpg" alt="img33" id="33" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<img src="images/34.jpg" alt="img34" id="34" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<img src="images/35.jpg" alt="img35" id="35" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<img src="images/36.jpg" alt="img36" id="36" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<img src="images/37.jpg" alt="img37" id="37" onmouseover="ampliar(this)" onmouseout="og()" style="width:12%"/>
+			<br/>
+			<div id="ampliado" style="visibility:hidden"></div>
+		</center>
+	</body>
+</html>

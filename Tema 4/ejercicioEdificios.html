@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+</head>
+
+<body>
+	<h1>Edificios</h1>
+	
+		<p>
+			<script language="JavaScript">				
+				function Edificio(calle,numero,codigoPostal){
+				
+					this.calle=calle;
+					this.numero=numero;
+					this.codigoPostal=codigoPostal;
+					this.numPlantas=0;
+					this.puertas=0;
+					this.propietario=new Array();
+
+					this.agregarPlantasYPuertas = function(numPlantas,puertas){
+						for(var i=1 ; i<=(this.numPlantas+numPlantas); i++){
+							this.propietario[i]=new Array();
+						}
+
+						this.numPlantas=this.numPlantas+numPlantas;
+						this.puertas=this.puertas+puertas;
+					};
+
+					this.modificarNumero = function(numero){
+						this.numero=numero;
+					};
+
+					this.modificarCalle = function(calle){
+						this.calle=calle;
+					};
+
+					this.modificarCodigoPostal = function(codigoPostal){
+						this.codigoPostal=codigoPostal;
+					};
+
+					this.imprimeNumero = function(){
+						return this.numero;
+					};
+
+					this.imprimeCalle = function(){
+						return this.calle;
+					};
+
+					this.imprimeCodigoPostal = function(){
+						return this.codigoPostal;
+					};
+
+					this.agregarPropietario = function(nombre,planta,puerta){
+						if(planta <= this.numPlantas && puerta<=this.puertas){
+							this.propietario[planta][puerta]=nombre;
+							document.write(this.propietario[planta][puerta]+" es ahora el propietario de la puerta "+puerta+
+								" de la planta "+planta+"<br>");
+						}
+					};
+
+					this.imprimePlantas = function(){
+						document.write("<strong>Listado de propietarios del edificio calle "+this.imprimeCalle()+" numero "
+							+this.imprimeNumero()+"</strong><br>");
+						for(var i=1; i<=this.numPlantas; i++){
+							for(var x=1; x<=this.puertas; x++){
+								if(typeof(this.propietario[i][x]) == "string")
+									document.write("Propietario del piso "+x+" de la planta "+i+": "+this.propietario[i][x]+"<br>");
+								else
+									document.write("Propietario del piso "+x+" de la planta "+i+": <br>");
+							}
+						}
+					};
+
+					document.write("Construido nuevo edificio en la calle: "+this.imprimeCalle()+", numero: "
+							+this.imprimeNumero()+", CP: "+this.imprimeCodigoPostal()+"<br>");
+				}//fin Edificio
+
+				var edificioA = new Edificio("Garcia Prieto","58","15706");
+				var edificioB = new Edificio("Camino Caneiro","29","32004");
+				var edificioC = new Edificio("San Clemente","s/n","15705");
+
+				document.write("<hr>");
+
+				document.write("Codigo postal edificio A: "+edificioA.imprimeCodigoPostal()+"<br>");
+				document.write("Calle edificio C: "+edificioC.imprimeCalle()+"<br>");
+				document.write("Numero edificio B: "+edificioB.imprimeNumero()+"<br>");
+
+				document.write("<hr>");	
+
+				edificioA.agregarPlantasYPuertas(2,3);
+
+				edificioA.agregarPropietario("Jose Antonio Lopez",1,1);
+				edificioA.agregarPropietario("Luisa Martinez",1,2);	
+				edificioA.agregarPropietario("Marta Castellon",1,3);
+				edificioA.agregarPropietario("Antonio Pereira",2,2);
+
+				document.write("<hr>");
+
+				edificioA.imprimePlantas();	
+
+				document.write("<hr>");	
+
+				edificioA.agregarPlantasYPuertas(1,0);
+				edificioA.agregarPropietario("Pedro Mejide",3,2);
+
+				document.write("<hr>");
+
+				edificioA.imprimePlantas();	
+
+				document.write("<hr>");		
+			</script>
+		</p>
+	
+</body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+		
+			function Diputado(nombre, apellido, dni, edad, partido){
+			
+				function Exception(mensaje) {
+					this.mensaje = mensaje;
+				}
+			
+				get: function getNombre(){	
+					return this.nombre;
+				}
+				
+				set: function setNombre(nombre){	
+					this.nombre=nombre;
+				}
+				
+				get: function getApellido(){	
+					return this.apellido;
+				}
+				
+				set: function setApellido(apellido){	
+					this.apellido=apellido;
+				}
+				
+				get: function getDni(){	
+					return this.dni;
+				}
+				
+				set: function setDni(dni){	
+					this.dni=dni;
+				}
+				
+				get: function getEdad(){
+					return this.edad;
+				}
+				
+				set: function setEdad(edad){	
+					this.edad=edad;
+				}
+				
+				get: function getPartido(){	
+					return this.partido;
+				}
+				
+				set: function setPartido(partido){	
+					this.partido=partido;
+				}
+				
+				this.toString=function(){	
+					document.write("Nombre: "+nombre+". Apellido: "+apellido+ ". DNI: "+dni+". Edad: "+edad+". Partido: "+partido+"." );
+				}
+			}
+				var diputado1=new Diputado("Herminio","Cabezas",12349,30,"Verde");
+				var diputado2=new Diputado("Manolo","López",12349,20,"Azul");
+				var diputado3=new Diputado("Jacobo","Sánchez",12349,53,"Amarillo");
+				
+				var arrayParlamento=new Array();
+				arrayParlamento[0]=diputado1;
+				arrayParlamento[1]=diputado2;
+				arrayParlamento[2]=diputado3;
+				
+				for (var x=0; x<arrayParlamento.length;x++){
+					arrayParlamento[x].toString();
+					document.write("<br/>");
+				}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

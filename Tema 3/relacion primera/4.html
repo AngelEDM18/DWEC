@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html>
+	<head> 
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/> 
+		<title>Apertura y Cierre de Ventanas</title>
+		<script type="text/javascript"> 
+
+			nuevaVentana=window.open("","ventana secundaria","height=600,width=800");	
+			  
+		</script> 
+	</head> 
+	<body> 
+		<h1>Comunicacion entre ventanas</h1> 
+		<form>
+			<p> 
+				<input type="text" id="url" name="url" value="http://www.">
+				<input type="button" value="Mostrar URL en ventana secundaria" onclick="nuevaVentana.location=document.getElementById('url').value;"> 				
+			</p> 
+		</form> 
+	</body>
+</html>

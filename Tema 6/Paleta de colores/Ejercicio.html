@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	 <meta charset="UTF-8"/>
+	 <title>Ejercicio paleta de colores</title>
+	<script src="codigo.js"></script>
+	<link href="estilo.css" rel="stylesheet">
+</head>
+	<body onload="iniciar()">
+    <table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
+        <p style="text-align:center">TABLERO</p>
+        <caption>
+            Haga CLICK en un color para comenzar a pintar
+        </caption>
+        <tr id="color">
+            <td id="color1" class="color1" onclick="color1()"></td>
+            <td id="color2" class="color2" onclick="color2()"></td>
+            <td id="color3" class="color3" onclick="color3()"></td>
+            <td id="color4" class="color4" onclick="color4()"></td>
+            <td id="color5" class="color5" onclick="color5()"></td>
+            <td id="color6" class="color6 seleccionado" onclick="color6()"></td>
+        </tr>
+        <tr>
+            <td colspan="6" id="pincel">PINCEL DESACTIVADO</td>
+        </tr>
+    </table>
+    <p></p>
+    <div id="zonadibujo"></div>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+
+<script language="JavaScript">
+	
+var num=prompt("Dime un numero que sea entero y positivo");
+
+function Capicuo(){
+
+	var num2,numReve="",cad=""+num;//En cad meto el numero para utilizarlo en el for
+	var capi=false;
+
+	for(var x=cad.length-1;x>=0;x--){
+		numReve=numReve+cad[x];
+	}
+
+	num2=parseInt(numReve);//Paso num2 a entero
+
+	if(num==num2){
+		capi=true;
+	}
+	
+	return (capi);
+}
+
+if(Capicuo(num)){
+	document.write("El "+num+" es capicuo");
+}else{
+	document.write("El "+num+" no es capicuo");
+}
+
+document.write("<br>");
+
+function Primo(){
+	var esPrimo=true;
+	
+	for(var x=num-1;x>1;x--){
+		if(num%x==0){//Si el numero % x es 0, no es primo.
+			esPrimo=false;
+		}
+	}
+	//Un numero es primo si solo es divisible por el mismo y por 1
+	return (esPrimo);
+}
+
+if(Primo(num)){
+	document.write("El "+num+" es primo");
+}else{
+	document.write("El "+num+" no es primo");
+}
+	
+document.write("<br>");
+
+function Antiguo(){
+	var ant=true;
+	if(num>=1900){
+		ant=false;
+	}
+	
+	return(ant);
+}
+
+if(Antiguo(num)){
+	document.write("El "+num+" es antiguo");
+}else{
+	document.write("El "+num+" no es antiguo");
+}
+	
+document.write("<br>");
+
+function Par(){
+	var esPar=false;
+	
+	if(num%2==0){
+		esPar=true;
+	}
+	
+	return(esPar);
+}
+	
+if(Par(num)){
+	document.write("El "+num+" es par");
+}else{
+	document.write("El "+num+" no es par");
+}
+	
+document.write("<br>");
+
+function esBisiesto(){
+	var bisiesto=false;
+	
+	if((num%4==0)&&((num%100!=0)||(num%400==0))){
+		bisiesto=true;
+	}
+	return(bisiesto);
+}
+
+if(esBisiesto(num)){
+	document.write("El "+num+" es bisiesto");
+}else{
+	document.write("El "+num+" no es bisiesto");
+}
+	
+document.write("<br>");
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

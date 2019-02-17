@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script>
+			function iniciar(){
+				var nuevoParrafo = document.createElement('p'); 
+				var nuevoTexto = document.createTextNode('Contenido añadido al párrafo.'); 
+				nuevoParrafo.appendChild(nuevoTexto); 
+				document.getElementById('parrafito').appendChild(nuevoParrafo);
+				var elementoP = document.createElement('p'); 
+				var elementoB = document.createElement('b'); 
+				var elementoBR = document.createElement('br'); 
+				elementoP.setAttribute('title','Parrafo creado desde JavaScript');
+				var texto1 = document.createTextNode('Con JavaScript se ');
+				var texto2 = document.createTextNode('pueden realizar '); 
+				var texto3 = document.createTextNode('un monton'); 
+				var texto4 = document.createTextNode(' de cosas sobre el documento.'); 
+				elementoB.appendChild(texto2); 
+				elementoB.appendChild(elementoBR); 
+				elementoB.appendChild(texto3); 
+				elementoP.appendChild(texto1); 
+				elementoP.appendChild(elementoB); 
+				elementoP.appendChild(texto4); 
+				document.getElementById('parrafito').appendChild(elementoP);
+			}
+		</script>
+	</head>
+	<body onload="iniciar()">
+		<p title="Texto de un párrafo" id="parrafito">Esto es un ejemplo de <b>texto HTML<br /> que puedes tener</b> en tu documento.</p>
+	</body>
+</html>

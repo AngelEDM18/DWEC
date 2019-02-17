@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	 <meta charset="UTF-8"/>
+	 <title>Ejercicio escolarización</title>
+
+	<style>
+		body {
+			background-color: #008246;
+		}
+
+		label {
+			color: white;
+		}
+		th{
+			color: white;
+		}
+
+		td{
+			color: white;
+		}
+		img{
+			float: left;
+		}
+	</style>
+
+<script src="codigo.js"></script>
+</head>
+
+<body onload="iniciar()">
+	<img src="solicitud.gif" alt="">
+<center><h1 style="color: white">Solicitudes de escolarización del curso 2014/15</h1></center>
+<center><h3 style="color: white">Solicitudes recibidas:</h3></center>
+
+
+<form action="" id="formu">
+    <center>
+    <label for="nombre">Nombre:</label>
+	<input id="nombre" name="nombre">
+	
+    <label for="apellidos">Apellidos:</label>
+	<input id="apellidos" name="apellidos">
+	
+	<label for="curso">Curso:</label>
+    <select id="curso">
+        <option value="1º ESO">1ESO</option>
+        <option value="2º ESO">2ESO</option>
+        <option value="3º ESO">3ESO</option>
+        <option value="4º ESO">4ESO</option>
+      </select>
+    </center><br>
+
+    <center><input type="button" id="botonAgregar" value="Añadir solicitud" onclick="agregar()"/></center><br>
+</form>
+
+</table>
+<table id="Tabla" align="center" border="1">
+	<tr>
+		<th>ID</th>
+		<th>Nombre</th>
+		<th>Apellidos</th>
+		<th>Curso</th>
+		<th>Eliminar</th>
+	</tr>
+</table>
+<br/>
+</body>
+</html>

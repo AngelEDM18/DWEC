@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hola Mundo con AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function descargaArchivo() {
+                if (window.XMLHttpRequest) {
+                    peticion_http = new XMLHttpRequest();
+                } else if (window.ActiveXobject) {
+                    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                document.getElementById("datos").innerHTML="";
+                
+                //alert(peticion_http.readyState);
+
+                peticion_http.onreadystatechange = muestraContenido;
+
+                peticion_http.open("GET", "holamundo.txt", true);
+                peticion_http.send(null);
+
+            }
+
+            function muestraContenido() {
+                if (peticion_http.readyState == 4) {
+                    if (peticion_http.status == 200) {
+                        alert(peticion_http.responseText);
+                        alert(peticion_http.getAllResponseHeaders());
+                        document.getElementById("datos").innerHTML=peticion_http.responseText;
+                    }
+                }
+            }
+            //window.onload = descargaArchivo;
+        </script>
+    </head>
+    <body>
+        <div id="datos"></div>
+        <input type="submit" value="mostrar informacion del txt" onclick="descargaArchivo();">
+    </body>
+</html>

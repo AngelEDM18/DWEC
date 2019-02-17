@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+		
+			function Edificio(calle, numero, codPostal, plantasPuertas){
+			
+				get: function getCalle(){	
+					return this.calle;
+				}
+				
+				set: function setCalle(calle){	
+					this.calle=calle;
+				}
+				
+				get: function getNumero(){	
+					return this.numero;
+				}
+				
+				set: function setNumero(numero){	
+					this.numero=numero;
+				}
+				
+				get: function getCodPostal(){	
+					return this.codPostal;
+				}
+				
+				set: function setCodPostal(codPostal){	
+					this.codPostal=codPostal;
+				}
+				
+				get: function getPlantas(){
+					return this.plantas;
+				}
+				
+				set: function setPlantas(plantas){	
+					this.plantas=plantas;
+				}
+				
+				this.toString=function(){	
+					document.write("Calle: "+calle+". Numero: "+numero+ ". Codigo Postal: "+codPostal+". Plantas: "+plantasPuertas[0][0]+"." );
+				}
+			}
+				
+				var plantasPuertas=new Array();
+				var plantasPuertas=[[1,2,3],[1,2,3]];
+				
+				var edificioA=new Edificio("Garcia Prieto","58","15706",plantasPuertas);
+				/*var edificioB=new Edificio("Camino Caneiro","20","32004");
+				var edificioC=new Edificio("San Clemente","s/n","15705");*/
+				var edificios=new Array();
+				edificios[0]=edificioA;
+				edificios[0].toString();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,2 @@
+Página web que al hacer click con el ratón en cualquier punto de la ventana del navegador, 
+me indique se la posición en la que se encuentra

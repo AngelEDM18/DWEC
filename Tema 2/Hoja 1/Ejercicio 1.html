@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			var valores = [true,5,false,"hola","adios",2];
+			
+			//APARTADO 1
+			
+			var strings = [];
+			var cont = 0;
+			for ( var i = 0; i < valores.length; i++){
+				if (typeof(valores[i]) == "string"){
+					strings[cont] = valores[i];
+					cont++;
+				}
+			}
+			
+			if (strings[0].length > strings[1].length){
+				document.write ("La cadena " + strings[0] + " es mayor");
+			} else {
+				document.write ("La cadena " + strings[1] + " es mayor");
+			}
+			
+			document.write ("<br/>");
+			
+			//APARTADO 2
+			
+			/*cont = 0;
+			var booleanos = [];
+			
+			if(typeof(valores[i])=="boolean"){
+				if (valores[i]==true {
+					booleanos[1]=valores[i];
+					cont++;
+				} else {
+					booleanos[0]=valores[i];
+					cont++;
+				}
+			}
+			
+			if(!(booleanos[0]&booleanos[1])){
+				document.write ("El resultado es falso usando AND");
+			} else {
+				document.write ("El resultado es falso usando OR");
+			}
+			
+			document.write ("<br/>");*/
+			
+			//APARTADO 3
+			
+			var numbers = [];
+			cont=0;
+			
+			for ( var x = 0; x < valores.length; x++){
+				if (typeof(valores[x]) == "number"){
+					numbers[cont] = valores[x];
+					cont++;
+				}
+			}
+			
+			document.write(numbers[0]+numbers[1]);
+			document.write ("<br/>");
+			document.write(numbers[0]-numbers[1]);
+			document.write ("<br/>");
+			document.write(numbers[0]*numbers[1]);
+			document.write ("<br/>");
+			document.write(numbers[0]/numbers[1]);
+			document.write ("<br/>");
+			document.write(numbers[0]%numbers[1]);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

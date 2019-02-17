@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+			function cambiaColor(){
+				var sinzo=document.getElementById("frase");
+				sinzo.style.color="yellow";
+				sinzo.style.fontSize="25px";
+			}
+			
+			function quitaColor(){
+				var sinzo=document.getElementById("frase");
+				sinzo.style.color="black";
+				sinzo.style.fontSize="16px";
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<p>Ejemplo 5:</p>
+			<p onmouseover="cambiaColor()" onmouseout="quitaColor()" id="frase">Ay caramba dijo el Var Sinzo</p>
+	</body>
+</html>

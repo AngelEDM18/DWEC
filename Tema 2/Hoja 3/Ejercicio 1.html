@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<script type="text/javascript">
+		
+			document.write("<table>");
+			document.write("<td width=\"33%\">TABLA DE MULTIPLICAR DEL 7</br>");
+			for (var x=1; x<=10; x++){
+				document.write("7 * "+x+" = "+x*7);
+				document.write("<br/>");
+			}
+			
+			document.write("</td><td width=\"45%\">TABLA DE SUMAR DEL 8</br>");
+			var x=1; 
+			do {
+				document.write("8 + "+x+" = "+(x+8));
+				document.write("<br/>");
+				x++;
+			} while (x<=10)
+			
+			document.write("</td><td>TABLA DE DIVIDIR DEL 9</br>");
+			var x=1;
+			while (x<=10){
+				document.write("9 / "+x+" = "+(9/x));
+				document.write("<br/>");
+				x++;
+			}
+			document.write("</table>");
+			document.write("<br/>");
+			
+			
+			document.write("<table>");
+			document.write("<tr><td width=\"55%\"><h4>125 / 8 con desplazamiento de bits</h4><br/>");
+			var x=125; var y=8;
+			document.write(x>>(Math.log2(y)));
+			document.write("</td>");
+			
+			document.write("<td><h4>40 * 4 con desplazamiento de bits</h4><br/>");
+			var x=40; var y=4;
+			document.write(x<<(Math.log2(y)));
+			document.write("</td></tr>");
+			
+			document.write("<tr><td width=\"55%\"><h4>25 / 2 con desplazamiento de bits</h4><br/>");
+			var x=25; var y=2;
+			document.write(x>>(Math.log2(y)));
+			document.write("</td>");
+			
+			document.write("<td><h4>10 * 16 con desplazamiento de bits</h4><br/>");
+			var x=10; var y=16;
+			document.write(x<<(Math.log2(y)));
+			document.write("<br/>");
+			document.write("</td></tr>");
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

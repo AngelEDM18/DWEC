@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<script>
+		function consultar(){
+			var objProvincias=document.getElementById("provincias");
+			var texto=objProvincias.options[objProvincias.selectedIndex].text;
+			var valor=objProvincias.options[objProvincias.selectedIndex].value;
+			alert("Datos de la opcion seleccionada: Texto: "+texto+". Valor: "+valor);
+		}
+	</script>
+	<body>
+		<h1>Trabajando con on objeto select</h1>
+		<form id="formulario" action="pagina.php">
+			<p>
+				<label for="provincias">Seleccione provincia</label>
+				<select name="provincias" id="provincias">
+					<option value="C">La Coruña</option>
+					<option value="LU">Lugo</option>
+					<option value="OU">Ourense</option>
+					<option value="PO">Pontevedra</option>
+				</select>
+			</p>
+			Selecciona una opcion y pulsa el boton.
+			<input type="button" name="boton" value="Consultar informacion de la opcion" onclick="consultar()"/>
+		</form>
+	</body>
+</html>

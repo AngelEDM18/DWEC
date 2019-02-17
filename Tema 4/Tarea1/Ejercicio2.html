@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+		
+			Array.prototype.sin=function(elemento){
+				var rtdo=new Array();
+				for (var x=0; x<this.length;x++){
+					if ((this[x])!=elemento){
+						rtdo.push(this[x]);
+					}
+				}
+				
+				return rtdo;
+			}
+			
+			var array=[1,2,3,4,5];
+			var filtrado=array.sin(2);
+			alert('el array original es: '+array+' y el array modificado es: '+filtrado);
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

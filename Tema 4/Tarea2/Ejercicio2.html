@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+		
+			function ProductoAlimenticio(codigo, nombre, precio){
+				this.codigo=codigo;
+				this.nombre=nombre;
+				this.precio=precio;
+				
+				this.imprimirDatos=function(){	
+					document.write("Nombre del producto: "+this.nombre+". Codigo: "+this.codigo+ ". Precio: "+this.precio );
+				}
+			}
+			
+			var producto1=new ProductoAlimenticio("123456","Juanito","5000");
+			var producto2=new ProductoAlimenticio("565354","Antonio","5423");
+			var producto3=new ProductoAlimenticio("548677","Paco","2512");
+			
+			var varSinzo=new Array();
+			varSinzo[0]=producto1;
+			varSinzo[1]=producto2;
+			varSinzo[2]=producto3;
+			
+			for (var x=0; x<varSinzo.length;x++){
+				varSinzo[x].imprimirDatos();
+				document.write("<br/>");
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

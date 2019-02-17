@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	 <meta charset="UTF-8"/>
+	 <title>Ejercicio importación de vehículos</title>
+	<style>
+		body {
+			background-color: white;
+		}
+		th {
+			background-color: red;
+			color: white;
+			text-transform: uppercase;
+		}
+		td {
+			text-align: center;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border: 1px solid white;
+		}
+	</style>
+<script src="script.js"></script>
+</head>
+
+<body>
+	<img src="imagenes/Cabecera.png" width="1350" height="170">
+	<hr></hr>
+<h1>Datos de la solicitud:</h1>
+	<p style="width: 100%; background-color: lightgray;font-weight: bold;">Datos del vehículo solicitado:</p>
+
+<form action="" id="formu">
+    
+    <label for="marca">Marca:</label>
+	<input id="marca" name="marca">
+	
+    <label for="modelo">Modelo:</label>
+	<input id="modelo" name="modelo">
+	
+    <label for="anoFabricacion">Año de fabricación:</label>
+	<input id="anoFabricacion" name="anoFabricacion">
+
+	<label for="kms">Kilómetros:</label>
+	<input id="kms" name="kms" type="text">
+
+	<label for="fechaEntrega">Fecha de entrega:</label>
+	<input id="fechaEntrega" name="fechaEntrega">
+
+	<p style="width: 100%; background-color: lightgray; font-weight: bold;">Nombre del cliente:</p>
+
+	<label for="nombre">Nombre:</label>
+	<input id="nombre" name="nombre">
+	
+    <label for="apellidos">Apellidos:</label>
+	<input id="apellidos" name="apellidos">
+	
+    <label for="correo">Correo electrónico:</label>
+	<input type="text" id="correo" name="correo">
+
+	<label for="telefono">Teléfono:</label>
+	<input id="telefono" name="telefono">
+
+<input type="button" style="margin-left: 50px;" id="botonAgregar" value="Añadir solicitud" onclick="agregar()"/>
+</form>
+
+<h1>Solicitudes registradas:</h1>
+
+<table id="tablaSolicitudes" align="center" border="1">
+	<tr>
+		<th>Identificador</th>
+		<th>Nombre</th>
+		<th>Apellidos</th>
+		<th>Email</th>
+		<th>Teléfono</th>
+		<th>Marca</th>
+		<th>Modelo</th>
+		<th>Año de fabricación</th>
+		<th>Kms.</th>
+		<th>Fecha de entrega</th>
+		<th>Eliminar</th>
+	</tr>
+</table>
+</body>
+</html>

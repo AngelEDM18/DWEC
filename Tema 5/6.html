@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+<title>Ejercicio6</title> 
+
+<script type="text/javascript"> 
+
+function cambiar(r){
+	
+	if(r=="s"){
+		document.getElementById("result").innerHTML = "Sanidad";
+	}
+	
+	if(r=="i"){
+		document.getElementById("result").innerHTML = "Informatica";
+	}
+	
+	if(r=="c"){
+		document.getElementById("result").innerHTML = "Cocina";
+	}
+	
+	
+}
+
+</script> 
+</head> 
+<body>
+<p>Ejemplo 6:</p><br/>
+<table border="1;">
+<tr><th>Ciclos formativos</th><th>Resultado</th></tr>
+<tr><td id="s" ondblclick="cambiar('s')">S</td></tr>
+<tr><td id="i" ondblclick="cambiar('i')">I</td><td id="result"></td></tr>
+<tr><td id="c" ondblclick="cambiar('c')">C</td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+1.- Validación de formulario
+Realizar la validación del formulario facilitado en el enunciado, cumpliendo los siguientes requisitos:
+
+Programar el código de JavaScript en un fichero independiente. La única modificación que se permite realizar en el fichero .HTML es la de escribir la referencia al fichero de JavaScript.
+Realizar una función que valide los campos de texto NOMBRE y APELLIDOS. Si se produce algún error mostrar el mensaje en un alert indicando el error cometido  y poner el foco en los campos correspondientes.
+Cada vez que los campos NOMBRE y APELLIDOS pierdan el foco, el contenido de esos campos se convertirá a mayúsculas.
+Validar la EDAD que contenga solamente valores numéricos y que esté en el rango de 0 a 105. Si se produce algún error mostrar el mensaje en un alert y poner el foco en el campo EDAD.

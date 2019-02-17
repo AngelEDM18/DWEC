@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html>
+	<head> 
+		<script languaje="JavaScript">
+		
+			var cont = 0;
+		 
+			function cambiar() {
+			
+				if (cont==0){
+					document.body.style.backgroundColor="red";
+					cont = 1;
+				} else if(cont==1){
+					document.body.style.backgroundColor="green";
+					cont = 2;
+				} else if(cont==2){
+					document.body.style.backgroundColor="blue";
+					cont = 3;
+				} else if(cont==3){
+					document.body.style.backgroundColor="yellow";
+					cont = 4;
+				} else if(cont==4){
+					document.body.style.backgroundColor="purple";
+					cont = 5;
+				} else if(cont==5){
+					alert("fin");
+					cont = 6;
+				} else if(cont==6){
+					cambiar.break();
+				}
+				
+			}
+		 
+		   setInterval("cambiar()",1000);
+			
+		</script>
+	</head>
+</html>

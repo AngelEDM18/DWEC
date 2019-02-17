@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+		
+			function Coche(codigo, nombre, precio){
+				this.codigo=codigo;
+				this.nombre=nombre;
+				this.precio=precio;
+				
+				this.imprimirDatos=function(){	
+					document.write("El coche de Angel es un "+this.nombre+" con matricula "+this.codigo+ " de precio "+this.precio );
+				}
+			}
+			
+			var cocheDeAngel=new Coche("123456","Volkswagen Golf","5000");
+			cocheDeAngel.imprimirDatos();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

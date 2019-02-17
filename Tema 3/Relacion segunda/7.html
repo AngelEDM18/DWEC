@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>fecha</title>   
+	    <script type="text/javaScript">
+		
+		  function textoFecha(fecha){
+			var numDiaSem = fecha.getDay();     
+			var diasSemana = new Array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+			var diaLetras = diasSemana[fecha.getDay()];    
+			var meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+			var mesLetras = meses[fecha.getMonth()];
+			var diaMes = (fecha.getDate())
+			var ano = fecha.getFullYear();
+			var hora = fecha.getHours();
+			var min = fecha.getMinutes();
+			
+			if ((min >= 0) && (min < 10)) {
+			  min = "0" + min;
+			}
+			var devolver = "Hoy es " + diaLetras+ ", " + diaMes + " de " + mesLetras + " de " + ano + " y son las " + hora + ":" + min + " horas.";
+			return devolver;
+		  }
+		  var fecha = new Date();
+		  alert(textoFecha(fecha));
+		  
+	   </script>
+	</head>
+	<body>
+	</body>
+</html>

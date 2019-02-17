@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<script>
+		function iniciar(){
+			totalFilas=1;
+			
+			nodoTabla=document.getElementById("tabla1");
+			document.getElementById("botoneliminar").disabled=true;
+			document.getElementById("botonleer").disabled=true;
+			document.getElementById("botonaumentar").disabled=true;
+			document.getElementById("botonrecudir").disabled=true;
+			}
+			
+			function leerBorde(){
+				alert("El borde de la tabla es "+nodoTabla.border);
+			}
+			
+			function aumentarBorde(){
+				nodoTabla.border++;
+			}
+			
+			function reducirBorde(){
+				nodoTabla.border--;
+			}
+			
+			function agregar(){
+				nodoFila=document.createElement("tr");
+				nodoTabla.appendChild(nodoFila);
+				for (celdas=0; celdas<=2; celdas++){
+					nodoCelda=document.createElement("td");
+					nodoFila.appendChild(nodoCelda);
+					valorTexto=document.createTextNode("Fila "+totalFilas+" Celda "+(celdas+1));
+					nodoCelda.appendChild(valorTexto);
+				}
+				totalFilas++;
+				if(totalFilas>0){
+					document.getElementById("botoneliminar").disabled=false;
+					document.getElementById("botonleer").disabled=false;
+					document.getElementById("botonaumentar").disabled=false;
+					document.getElementById("botonrecudir").disabled=false;
+				} else {
+					document.getElementById("botoneliminar").disabled=true;
+					document.getElementById("botonleer").disabled=true;
+					document.getElementById("botonaumentar").disabled=true;
+					document.getElementById("botonrecudir").disabled=true;
+				}
+				if (totalFilas==6){
+					document.getElementById("botonagregar").disabled=true;
+				} else {
+					document.getElementById("botonagregar").disabled=false;
+				}
+			}
+			
+			function eliminar(){
+				nodoTabla.removeChild(nodoTabla.lastChild);
+				totalFilas--;
+				if(totalFilas>1){
+					document.getElementById("botoneliminar").disabled=false;
+					document.getElementById("botonleer").disabled=false;
+					document.getElementById("botonaumentar").disabled=false;
+					document.getElementById("botonrecudir").disabled=false;
+				}else {
+					document.getElementById("botoneliminar").disabled=true;
+					document.getElementById("botonleer").disabled=true;
+					document.getElementById("botonaumentar").disabled=true;
+					document.getElementById("botonrecudir").disabled=true;
+				}
+				if (totalFilas==6){
+					document.getElementById("botonagregar").disabled=true;
+				} else {
+					document.getElementById("botonagregar").disabled=false;
+				}
+			}
+		
+			
+		</script>
+	</head>
+	<body onload="iniciar();">
+		<h1>Operaciones con la tabla<h1>
+		<table id="tabla1" align="center" width="450" border="2">
+		 
+		</table>
+		<br/>
+		<table align="center">
+			<tr>
+				<td><input type="button" id="botonagregar" value="Agregar fila (hasta un maximo de 5)" onclick="agregar();"></td>
+				<td><input type="button" id="botoneliminar" value="Eliminar fila" onclick="eliminar();"></td>
+				<td><input type="button" id="botonleer" value="Leer borde" onclick="leerBorde();"></td>
+				<td><input type="button" id="botonaumentar" value="Aumentar borde" onclick="aumentarBorde();"></td>
+				<td><input type="button" id="botonrecudir" value="Reducir borde" onclick="reducirBorde();"></td>
+			</tr>
+		</table>
+	</body>
+</html>

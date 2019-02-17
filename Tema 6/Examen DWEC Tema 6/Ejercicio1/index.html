@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript" src="codigo_ejercicio1.js"></script>
+	</head>
+	<body>
+		<img src="Cabecera.png"/>
+		<hr/>
+		<h2>Datos de la solicitud:</h2>
+		<br/>
+			<p>Datos del vehiculo solicitado:</p>
+			<table id="tabla1">
+				<tr>
+					<td>Marca</td>
+					<td>Modelo</td>
+					<td>Año de fabricacion</td>
+					<td>Kms</td>
+					<td>Fecha de entrega</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="marca"></td>
+					<td><input type="text" id="modelo"></td>
+					<td><input type="text" id="fabricacion"></td>
+					<td><input type="text" id="kms"></td>
+					<td><input type="text" id="entrega"></td>
+				</tr>
+			</table>
+			<p>Datos del cliente:</p>
+			<table id="tabla2">
+				<tr>
+					<td>DNI</td>
+					<td>Nombre y apellidos</td>
+					<td>Correo electronico</td>
+					<td>Telefono</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="dni"></td>
+					<td><input type="text" id="nombre"></td>
+					<td><input type="text" id="email"></td>
+					<td><input type="text" id="telefono"></td>
+					<td><button onclick="validar();">Añadir solicitud</button></td>
+				</tr>
+			</table>
+		<br/>
+		<h2>Solicitudes registradas:</h2>
+		<table id="tablaRegistro" border="1">
+			<tr>
+				<td>Identificador</td>
+				<td>DNI</td>
+				<td>Nombre y apellidos</td>
+				<td>Email</td>
+				<td>Telefono</td>
+				<td>Marca</td>
+				<td>Modelo</td>
+				<td>Año de fabricacion</td>
+				<td>Kms</td>
+				<td>Fecha de entrega</td>
+			</tr>
+		</table>
+	</body>
+</html>

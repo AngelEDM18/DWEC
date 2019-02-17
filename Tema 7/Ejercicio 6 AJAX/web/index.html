@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function descargaArchivo(id) {
+                if (window.XMLHttpRequest) {
+                    peticion_http = new XMLHttpRequest();
+                } else if (window.ActiveXobject) {
+                    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                document.getElementById("datos").innerHTML = "";
+
+                if (id == 1) {
+                    peticion_http.onreadystatechange = muestraContenido;
+                } else if (id == 2) {
+                    peticion_http.onreadystatechange = muestraContenidoInfantil;
+                } else {
+                    peticion_http.onreadystatechange = muestraContenidoAdultos;
+                }
+
+                peticion_http.open("GET", "libros.xml", true);
+                peticion_http.send(null);
+
+            }
+
+            function muestraContenido() {
+                var titulo = "";
+                var txt = "";
+                var longitud = 0;
+                if (peticion_http.readyState == 4) {
+                    if (peticion_http.status == 200) {
+                        var document_xml = peticion_http.responseXML;
+                        var x = document_xml.getElementsByTagName("Titulo");
+
+                        longitud = x.length;
+
+                        for (i = 0; i < longitud; i++) {
+                            titulo = document_xml.getElementsByTagName("Titulo")[i].childNodes[0].nodeValue;
+                            txt = txt + titulo + "<br/>";
+                        }
+                        var txt2 = txt + "<br/>";
+                        document.getElementById("datos").innerHTML = txt2;
+                    }
+                }
+            }
+
+            function muestraContenidoInfantil() {
+                var titulo = "";
+                var txt = "";
+                if (peticion_http.readyState == 4) {
+                    if (peticion_http.status == 200) {
+                        var document_xml = peticion_http.responseXML;
+
+                        var root = document_xml.getElementsByTagName("Infantil")[0];
+                        var titulo = root.getElementsByTagName("Titulo");
+                        for (var i = 0; i < titulo.length; i++) {
+                            txt += titulo[i].firstChild.nodeValue + "<br>";
+                        }
+                        document.getElementById("datos").innerHTML = txt;
+                    }
+                }
+            }
+
+            function muestraContenidoAdultos() {
+                var titulo = "";
+                var txt = "";
+                if (peticion_http.readyState == 4) {
+                    if (peticion_http.status == 200) {
+                        var document_xml = peticion_http.responseXML;
+
+                        var root = document_xml.getElementsByTagName("Adultos")[0];
+                        var titulo = root.getElementsByTagName("Titulo");
+                        for (var i = 0; i < titulo.length; i++) {
+                            txt += titulo[i].firstChild.nodeValue + "<br>";
+                        }
+                        document.getElementById("datos").innerHTML = txt;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="submit" value="Ver todos los libros" onclick="descargaArchivo(1);">
+        <input type="submit" value="Ver solo los libros infantiles" onclick="descargaArchivo(2);">
+        <input type="submit" value="Ver solo los libros de adultos" onclick="descargaArchivo(3);">
+        <div id="datos"></div>
+    </body>
+</html>

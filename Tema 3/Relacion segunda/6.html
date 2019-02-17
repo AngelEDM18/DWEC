@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>numero de vocales</title>
+	   
+	    <script type="text/javaScript">
+			var cadena = prompt("Introduce una cadena de texto:");
+			var numchar = cadena.length;    
+			cadena = cadena.toUpperCase();  
+			var car;
+			var contador = 0;
+			var i;
+			for (i = 0; i < numchar; i++) {
+				car = cadena.charAt(i);    
+				if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
+					contador++;
+				}
+			}
+			alert("La cadena tiene " + contador + " vocales");
+	    </script>
+
+	</head>
+	<body>
+	</body>
+</html>

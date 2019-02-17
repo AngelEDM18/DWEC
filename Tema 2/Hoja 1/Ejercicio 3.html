@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+		
+			var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E", "T"];
+			var numDni=prompt("Introduzca el numero del DNI");
+			var letraDni=prompt("Introduzca la letra del DNI");
+			letraDni=letraDni.toUpperCase();
+			
+			var numDniP=parseInt(numDni);
+			if (numDniP != numDni){
+				document.write("Error en el numero");
+				document.write("<br/>");
+			} else {
+			
+				if (numDni < 0 || numDni > 99999999){
+					document.write("Error. el numero proporcionado no es valido");
+				} else {
+					var restoDni=numDni%23;
+					var letra1=letras[restoDni];
+					if (letra1==letraDni){
+						document.write("DNI CORRECTO");
+					} else {
+						document.write("DNI INCORRECTO");
+					} 
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

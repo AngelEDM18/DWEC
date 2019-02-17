@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>aleatorios</title>
+		<script> 
+		
+			var cont = 0;
+			var ale;
+			var num1 = 0;
+			var num2 = 0;
+			var num3 = 0;
+			do {
+				ale = Math.floor((Math.random() * 99) + 1);
+				if ((ale != num1) && (ale != num2) && (ale != 3)) {
+					alert(ale);
+					cont++;
+					if (cont == 1) {
+						num1 = ale;
+					}
+					if (cont == 2) {
+						num2 = ale;
+					}
+					if (cont == 3) {
+						num3 = ale;
+					}
+				}
+			} while (cont < 3);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

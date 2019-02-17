@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hola Mundo con AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function descargaArchivo() {
+                if (window.XMLHttpRequest) {
+                    peticion_http = new XMLHttpRequest();
+                } else if (window.ActiveXobject) {
+                    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                document.getElementById("datos").innerHTML = "";
+
+                //alert(peticion_http.readyState);
+
+                peticion_http.onreadystatechange = muestraContenido;
+
+                peticion_http.open("GET", "datos.xml", true);
+                peticion_http.send(null);
+
+            }
+
+            function muestraContenido() {
+                var titulo = "";
+                var artista = "";
+                var pais = "";
+                var txt = "";
+                var longitud = 0;
+                if (peticion_http.readyState == 4) {
+                    if (peticion_http.status == 200) {
+                        var document_xml = peticion_http.responseXML;
+                        var x = document_xml.getElementsByTagName("CD");
+
+                        longitud = x.length;
+
+                        for (i = 0; i < longitud; i++) {
+                            titulo = document_xml.getElementsByTagName("TITULO")[i].firstChild.nodeValue;
+                            artista = document_xml.getElementsByTagName("ARTISTA")[i].firstChild.nodeValue;
+                            pais = document_xml.getElementsByTagName("PAIS")[i].firstChild.nodeValue;
+                            txt = txt + titulo + " --- " + artista + " --- " + pais + " --- " + "<br/>"
+                            //alert(txt);
+                        }
+                        var txt2 = txt + "<br/>";
+                        document.getElementById("datos").innerHTML = txt2;
+                    }
+                }
+            }
+            //window.onload = descargaArchivo;
+        </script>
+    </head>
+    <body>
+        <div id="datos"></div>
+        <input type="submit" value="mostrar informacion del txt" onclick="descargaArchivo();">
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>paiíndromos</title>
+		<script type="text/javascript">
+			
+			var cadena=prompt("Escribe una cadena");
+			var palindromo="";
+			var c;
+			cadena=cadena.replace(/ /g,"");
+			  
+			for (var i=cadena.length; i>=0; i--){
+				c=cadena.charAt(i);
+				palindromo=palindromo+c;
+			}
+			
+			if (cadena==palindromo){
+				alert(cadena+" es un palindromo");
+			} else {
+				alert(cadena+" no es un palindromo");
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

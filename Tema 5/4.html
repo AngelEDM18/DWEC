@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+			function escribirMayuscula(){
+				document.forms[0].mayuscula.value=document.forms[0].frase.value.toUpperCase();
+				document.forms[0].mayuscula.style.color="green";
+				document.forms[0].mayuscula.style.fontFamily="Impact, Arial";
+				document.forms[0].mayuscula.style.size="12";
+			}
+			
+			function escribirMinuscula(){
+				document.forms[0].minuscula.value=document.forms[0].frase.value.toLowerCase();
+				document.forms[0].minuscula.style.color="red";
+			}
+		</script>
+	</head>
+	<body>
+		<p>Ejemplo 4:</p>
+		<form>
+			Escribe una frase:
+				<input type="text" name="frase" onkeydown="escribirMayuscula()" onkeypress="escribirMinuscula()" size="50">
+				<br/>MAYUSCULA<input type="text" name="mayuscula" size="50">
+				<br/>minuscula<input type="text" name="minuscula" size="50">
+		</form>
+	</body>
+</html>

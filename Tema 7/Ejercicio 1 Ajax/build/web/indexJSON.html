@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+            var READY_STATE_COMPLETE = 4;
+            var peticion_http = null;
+
+            function inicializa_xhr() {
+                if (window.XMLHttpRequest) {
+                    return new XMLHttpRequest();
+                } else if (window.ActiveXObject) {
+                    return new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+
+            function crea_query_string() {
+                var fecha = document.getElementById("fecha_nacimiento");
+                var cp = document.getElementById("codigo_postal");
+                var telefono = document.getElementById("telefono");
+                return "fecha_nacimiento=" + encodeURIComponent(fecha.value) +
+                        "&codigo_postal=" + encodeURIComponent(cp.value) +
+                        "&telefono=" + encodeURIComponent(telefono.value) +
+                        "&nocache=" + Math.random();
+            }
+            function valida() {
+                peticion_http = inicializa_xhr();
+
+                if (peticion_http) {
+                    peticion_http.onreadystatechange = procesaRespuestaJSON;
+                    peticion_http.open("POST", "validarDatosJSON.jsp", true);
+                    peticion_http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    var query_string = crea_query_string();
+                    peticion_http.send(query_string);
+                }
+            }
+
+            function procesaRespuestaJSON() {
+                if (peticion_http.readyState == READY_STATE_COMPLETE) {
+                    if (peticion_http.status == 200) {
+
+                        var respuesta_json = peticion_http.responseText;
+                        var objeto_json = eval("(" + respuesta_json + ")");
+                        
+                        var telefono = objeto_json.telefono;
+                        var codigo_postal = objeto_json.codigo_postal;
+                        var fecha_nacimiento = objeto_json.fecha_nacimiento;
+
+                        document.getElementById("respuesta").innerHTML = "<br>" + "Fecha nacimiento = " + fecha_nacimiento + "<br>" + "Codigo postal = " + codigo_postal +
+                                "<br>" + "Telefono = " + telefono;
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <form>
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="text" name="fecha_nacimiento" id="fecha_nacimiento"><br>
+            <label for="codigo_postal">Código postal:</label>
+            <input type="text" name="codigo_postal" id="codigo_postal"><br>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" id="telefono"><br>
+            <input type="button" value="Validar datos" onclick="valida()">
+        </form>
+        <div id="respuesta"></div>
+    </body>
+</html>

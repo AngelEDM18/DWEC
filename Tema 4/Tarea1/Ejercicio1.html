@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+		
+			String.prototype.truncar = function(longitud, reemplazo) {
+				
+				if (longitud<cadena.length){
+					if (reemplazo==null){
+						return this.substring(0, longitud);
+					} else {
+							return this.substring(0, longitud-reemplazo.length) + reemplazo;
+					}
+				} else {
+					alert("Error, la longitud especificada es mayor que la de la cadena. ");
+				}
+			}
+			
+			var cadena = "hola mundo";
+			document.write(cadena.truncar(6));
+			document.write("<br/>");
+			document.write(cadena.truncar(6,'...'));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

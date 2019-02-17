@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="JavaScript">
+
+		function edificio(calle, numero, codPostal){
+			this.calle=calle;
+			this.numero=numero;
+			this.codPostal=codPostal;
+			this.plantas=new Array();
+			
+			this.agregarPlantasYPuertas=function(numPlantas, puertas){
+			
+			if (this.plantas.length==0){
+				for(var i=0; i<numPlantas; i++){
+					this.plantas[i]=new Array();
+					for (var x=0; x<puertas; x++){
+						this.plantas[i].push("");
+					}
+				}
+			} else {
+				
+			}
+				
+			}
+			
+			
+			this.imprimePlantas=function(){
+				document.write("Listado de propietarios del edificio:<br/>")
+				for(var i=0; i<this.plantas.length; i++){
+					for(var x=0; x<this.plantas[i].length; x++){
+						document.write("El pripietario de la planta: "+(i+1)+" puerta: "+(x+1)+" es: "+this.plantas[i][x]+"<br/>");
+					}
+				}
+			}
+			
+			document.write("Contstruido nuevo edificio en calle "+this.calle+", nº: "+this.numero+", CP: "+this.codPostal+"<hr/>");
+			
+		}
+		
+		edificioA=new edificio("Garcia Prieto","58","15706");
+		edificioB=new edificio("Camino Caneiro","29","32004");
+		edificioC=new edificio("San Clemente","s/n","15705");
+		
+		edificioA.agregarPlantasYPuertas(2,4);
+		edificioA.imprimePlantas();
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

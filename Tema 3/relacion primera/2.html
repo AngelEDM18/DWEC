@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html>
+	<head> 
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/> 
+		<title>Apertura y Cierre de Ventanas</title> 
+		<style>
+			img{height:200px; width:200px}
+		</style>
+		<script type="text/javascript"> 
+
+			function inicializar() { 
+				
+			} 
+			 
+			var nuevaVentana; 
+			function crearNueva(imagen) { 
+				nuevaVentana = window.open(imagen,"","Gatos","height=600,width=800");
+				nuevaVentana.document.write("<html><img src="+imagen+"/></br>");
+                nuevaVentana.document.write("<input type='button' id='cerrar-ventana' value='Cerrar la ventana' onclick=window.close();></input></html>");
+			}		
+			  
+		</script> 
+	</head> 
+	<body onLoad="inicializar()"> 
+		<h1>Pagina con miniaturas de imagenes</h1> 
+		<table>
+			<tr> 
+				<td><img src="gatos/1.jpg" id="abrir-ventana" onclick="crearNueva('gatos/1.jpg');"/></td>
+				<td><img src="gatos/2.jpg" id="abrir-ventana" onclick="crearNueva('gatos/2.jpg');"/></td>
+				<td><img src="gatos/3.jpg" id="abrir-ventana" onclick="crearNueva('gatos/3.jpg');"/></td>
+				<td><img src="gatos/4.jpg" id="abrir-ventana" onclick="crearNueva('gatos/4.jpg');"/></td>
+			</tr> 
+		</table> 
+	</body>
+</html>

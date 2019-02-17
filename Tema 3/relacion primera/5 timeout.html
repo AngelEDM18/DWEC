@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html>
+	<head> 
+		<script languaje="JavaScript">
+		    veces=0;
+			num_color = 1;
+			cambia_color();
+			function cambia_color() {
+			
+				if (num_color==1){
+					document.bgColor="yellow";
+					num_color=2;
+				} else {
+					document.bgColor="aqua";
+					num_color=1;
+				}
+				
+				veces+=1;	
+			
+				if (veces<=5){
+					setTimeout("cambia_color()",1000);
+				}
+				
+			}
+		</script>
+	</head>
+</html>
